@@ -1,6 +1,7 @@
 .locationList{
     height: 85vh; 
     overflow: auto;
+    background-color: #282c34;
 }
 
 @media (max-width: 64em){

@@ -1,5 +1,6 @@
 .App {
-  text-align: center;
+  background-color: #282c34;
+  width: 90%;
 }
 
 .App-logo {
@@ -38,7 +39,7 @@
 }
 
 .details {
-  background: #3b3b3b;
+  background: #282c34;
   height: 85vh;
   width: calc(100% - 40px);
   overflow: auto;

@@ -8,6 +8,7 @@ import {createStore} from 'redux';
 import './App.css';
 import LocationList from './components/LocationList';
 import ForecastExtended from './components/ForecastExtended';
+import {setCity} from './actions';
 
 const cities = [
   'Buenos Aires,ar',
@@ -17,7 +18,11 @@ const cities = [
   'Lima,pe',
 ];
 
-const store = createStore(() => {}, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const store = createStore(() => {}, 
+  // configuracion para extension de redux en Chrome
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
+
 
 class App extends Component {
 
@@ -30,14 +35,14 @@ class App extends Component {
     this.setState({city}); // esto es igual a city: city
     console.log(`handleSelectedLocation ${city}`);   
     
-    const action = {type: 'setCity', value: city};
-    store.dispatch(action);
+    
+    store.dispatch(setCity(city));
   };
 
   render(){
     const { city } = this.state; 
     return (
-      <Grid>
+      <Grid className="App">
         <Row> 
           <AppBar position='sticky'>
             <Toolbar>
