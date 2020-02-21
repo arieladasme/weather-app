@@ -4,11 +4,11 @@ import AppBar from '@material-ui/core/AppBar';
 import Typography from '@material-ui/core/Typography';
 import Toolbar from '@material-ui/core/Toolbar';
 import {Grid, Col, Row} from 'react-flexbox-grid';
-import {createStore} from 'redux';
 import './App.css';
 import LocationList from './components/LocationList';
 import ForecastExtended from './components/ForecastExtended';
 import {setCity} from './actions';
+import {store} from './store';
 
 const cities = [
   'Buenos Aires,ar',
@@ -18,9 +18,6 @@ const cities = [
   'Lima,pe',
 ];
 
-const store = createStore(() => {}, 
-  // configuracion para extension de redux en Chrome
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 
 
